@@ -14,11 +14,11 @@
   min-height: 100vh;
   margin-left: auto;
   margin-right: auto;
-  background-color:honeydew;
+  background-color:ivory;
 }
 
 .header {
-  background-image: url('C:\Users\PC\Desktop\Toy_Project_Front\toy-project\public\image1.png');
+  background-image: url('./image1.png');
   background-size: cover;
   background-position: center;
   height: 815px;
@@ -66,7 +66,34 @@
   margin-bottom: 30px;
 }
 
-.App-logo {
+.parent-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 200px;
+}
+
+.child-div {
+  display: flex;
+  align-items: center;
+}
+
+.catcha-p {
+  color: gray;
+  font-size: 20px;
+  margin-left: 85px;
+  line-height: 200%;
+}
+
+.catcha-but {          
+  cursor: pointer;
+  height: 50px;
+  font-size: 20px;
+  border: none;
+  border-radius: 8px;
+}
+
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -99,4 +126,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
