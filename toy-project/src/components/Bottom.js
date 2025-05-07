@@ -3,7 +3,7 @@ import './components.css';
 function Bottom() {
   return (
     <div>
-      <p style={{'fontWeight':'800', 'fontSize': '40px', 'margin': '0 0 0 200px'}}>
+      <p style={{'fontWeight':'800', 'fontSize': '40px', 'margin': '0 0 5px 200px'}}>
         이용 안내
       </p>
 
@@ -26,7 +26,7 @@ function Bottom() {
         </div>
       </div>
 
-      <div className='parent-div' style={{'padding': '30px 230px'}}>
+      <div className='parent-div' style={{'padding': '30px 230px', 'marginBottom':'50px'}}>
         <div>
           <img src='./lock closed.png' style={{'margin': '0 0 10px 0'}} alt='Bank' />
           <p style={{'fontSize': '30px', 'margin': '0 0 10px 0', 'fontWeight': '600'}}>Bank</p>
