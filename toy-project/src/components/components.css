@@ -58,7 +58,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 200px;
+  padding: 20px 200px;
 }
 
 .child-div {
@@ -98,4 +98,34 @@
   width: 23px;
   height: auto;
   cursor: pointer;
+}
+
+.review-div {
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 200px;
+}
+
+.review-img {
+  width: 450px;
+  height: auto;
+  padding-top : 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: ivory;
+}
+
+.review-pp {
+  margin: 15px 0 0 10px;
+  font-size: 25px;
+  color: black;
+}
+
+.review-p {
+  margin: 2px 0 0 10px;
+  font-size: 20px;
+  color: gray;
+  width: 550px;
 }

@@ -3,7 +3,7 @@ import './components.css';
 function Bottom() {
   return (
     <div>
-      <p style={{'fontWeight':'800', 'fontSize': '40px', 'margin': '0 0 5px 200px'}}>
+      <p style={{'fontWeight':'800', 'fontSize': '40px', 'margin': '40px 0 5px 200px'}}>
         이용 안내
       </p>
 

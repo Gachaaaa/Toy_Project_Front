@@ -3,7 +3,7 @@ import './components.css';
 function Middle() {
   return (
     <div>
-      <div className='parent-div'>
+      <div className='parent-div' style={{'paddingTop': '60px'}}>
 
         <div>
           <div className='child-div'>
