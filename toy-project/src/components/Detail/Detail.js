@@ -1,6 +1,7 @@
 import React from 'react';
 import './Detail.css';
 import gatchImg from './Detail_img/GATCHA.png';
+import { useNavigate } from 'react-router-dom';
 
 const products = [
   { id: 1, name: '인제오냐 뽀잉가챠 2', price: '4000원' },
@@ -24,26 +25,45 @@ const products = [
 ];
 
 function Detail() {
+  const navigate = useNavigate();
+
+  // 상품 3개씩 묶기
+  const chunkedProducts = [];
+  for (let i = 0; i < products.length; i += 3) {
+    chunkedProducts.push(products.slice(i, i + 3));
+  }
+
   return (
     <div className="detail-page">
       <img src={gatchImg} className='main-img' alt='가챠로고' />
-      <div className="product-grid">
-        {products.map((product) => (
-          <div className="product-card" key={product.id}>
-            <img
-              src={require(`./Detail_img/${product.id}.png`)}
-              alt={product.name}
-              className="product-image"
-            />
-            <div className="product-name">{product.name}</div>
-            <div className="product-price">{product.price}</div>
-          </div>
-        ))}
-      </div>
+      
+      {chunkedProducts.map((row, rowIndex) => (
+        <div
+          className="product-row"
+          key={rowIndex}
+          style={{ display: 'flex', gap: '24px', marginBottom: '32px' }}
+        >
+          {row.map((product) => (
+            <div
+              className="product-card"
+              key={product.id}
+              style={{ flex: 1, cursor: 'pointer' }}
+              onClick={() => navigate(`/detail/${product.id}`)} // ✅ 수정한 부분: 경로를 `/detail/1` 등으로 변경
+            >
+              <img
+                src={require(`./Detail_img/${product.id}.png`)}
+                alt={product.name}
+                className="product-image"
+              />
+              <div className="product-name">{product.name}</div>
+              <div className="product-price">{product.price}</div>
+            </div>
+          ))}
+        </div>
+      ))}
     </div>
   );
 }
 
 export default Detail;
-
 
