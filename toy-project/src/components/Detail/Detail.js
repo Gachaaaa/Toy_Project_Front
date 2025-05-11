@@ -1,13 +1,49 @@
-import './detail.css';
+import React from 'react';
+import './Detail.css';
+import gatchImg from './Detail_img/GATCHA.png';
+
+const products = [
+  { id: 1, name: '인제오냐 뽀잉가챠 2', price: '4000원' },
+  { id: 2, name: '넨잇찌 운명의 뽀잉가챠', price: '5000원' },
+  { id: 3, name: '야호야 뽀잉가챠 장난감들', price: '3500원' },
+  { id: 4, name: '딸곰과 딸기와 함께 뽀잉가챠', price: '5000원' },
+  { id: 5, name: '짱구와 살인눈썹과 걷기 가챠', price: '5500원' },
+  { id: 6, name: '귀신쎄벳의 웃으속 속리온 가챠', price: '3500원' },
+  { id: 7, name: '뎅차와 함께 뽀잉가챠', price: '4000원' },
+  { id: 8, name: '쫄보남 룰렛 주술회전 가챠', price: '5000원' },
+  { id: 9, name: '아기가 된다면 고난 가챠', price: '6000원' },
+  { id: 10, name: '모두 함께 절자요~ 꿈꾸 가챠', price: '4000원' },
+  { id: 11, name: '슈퍼보자 꿈꾸 가챠', price: '5000원' },
+  { id: 12, name: '봄의 카드캡처체리의 심리온 가챠', price: '6000원' },
+  { id: 13, name: '아기가 된다면 고난 가챠2', price: '6000원' },
+  { id: 14, name: '팅팅 뚱빵 내맘 배구클럽 하이큐 가챠', price: '5000원' },
+  { id: 15, name: '언제 넌 먹이줄까 음식가챠', price: '2000원' },
+  { id: 16, name: '귀여운 도시락 가챠', price: '4000원' },
+  { id: 17, name: '현대인의 덕목은 체력! 뽀잉가챠', price: '5000원' },
+  { id: 18, name: '포박곰 뽀잉로 가챠', price: '3500원' },
+];
 
 function Detail() {
   return (
-    <div style={{ padding: '40px' }}>
-      <h2>📦 상세 페이지</h2>
-      <p>이곳은 Detail 컴포넌트입니다.</p>
+    <div className="detail-page">
+      <img src={gatchImg} className='main-img' alt='가챠로고' />
+      <div className="product-grid">
+        {products.map((product) => (
+          <div className="product-card" key={product.id}>
+            <img
+              src={require(`./Detail_img/${product.id}.png`)}
+              alt={product.name}
+              className="product-image"
+            />
+            <div className="product-name">{product.name}</div>
+            <div className="product-price">{product.price}</div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
 
 export default Detail;
+
 
