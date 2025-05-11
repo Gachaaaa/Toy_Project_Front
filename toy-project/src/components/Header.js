@@ -1,7 +1,10 @@
 import './components.css';
 import catchImg from './img/GATCHA.png';
+import { useNavigate, Link } from 'react-router-dom';
+
 
 function Header() {
+  const navigate=useNavigate();
   return (
     <div className='header'>
       <header className='navbar'>
@@ -26,9 +29,11 @@ function Header() {
 
         <p className='parg'>그저 한 번 돌렸을 뿐인데, 이미 수집모드 ON</p>
 
-        <button className='head-but' 
-              style={{'width': '90px', 'height': '68px', 'fontSize': '20px'}}>
-                GO!</button>
+        <button
+      className='head-but'
+      style={{ width: '90px', height: '68px', fontSize: '20px' }}
+      onClick={() => navigate('/Detail')}
+    >GO!</button>
       </div>
     </div>
   );

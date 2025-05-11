@@ -16,5 +16,15 @@
     "url": "https://github.com/Gachaaaa/Toy_Project_Front/issues"
   },
   "homepage": "https://github.com/Gachaaaa/Toy_Project_Front#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^6.30.0",
+    "react-scripts": "^5.0.1",
+    "web-vitals": "^5.0.0"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^5.6.3"
+  }
 }
