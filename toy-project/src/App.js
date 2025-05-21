@@ -9,6 +9,7 @@ import Review from './components/Review.js';
 import Detail from './components/Detail/Detail.js';
 import Detail_Header from './components/Detail/Detail_Header.js';
 import Detail_Ground from './components/Detail/Detail_Ground.js';
+import Login from './components/Login.js';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -46,10 +47,21 @@ function MainPage() {
 
 function DetailPage() {
   return (
-    <div>
+    <div className="container">
       <Detail_Header />
       <Detail />
-      <hr style={{ width: '90%' }} />
+      <hr style={{ width: '90%'}} />
+      <Detail_Ground />
+    </div>
+  );
+}
+
+function LoginPage() {
+  return (
+    <div className="container">
+      <Detail_Header />
+      <Login />
+      <hr style={{ width: '90%'}} />
       <Detail_Ground />
     </div>
   );
@@ -80,6 +92,8 @@ function App() {
         <Route path="/detail/16" element={<div><Detail_Header /><Detail2_16 /><hr style={{ width: '90%' }} /><Detail_Ground /></div>} />
         <Route path="/detail/17" element={<div><Detail_Header /><Detail2_17 /><hr style={{ width: '90%' }} /><Detail_Ground /></div>} />
         <Route path="/detail/18" element={<div><Detail_Header /><Detail2_18 /><hr style={{ width: '90%' }} /><Detail_Ground /></div>} />
+
+        <Route path="/Login" element={<LoginPage />} />
       </Routes>
     </BrowserRouter>
   );

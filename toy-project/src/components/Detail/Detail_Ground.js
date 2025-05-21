@@ -2,7 +2,7 @@ import './Detail.css';
 
 function Ground() {
   return (
-    <div>
+    <div style={{backgroundColor: 'ivory'}}>
       <div className='ground-div'>
         <p style={{ fontSize: '25px', margin: '0 20px 0 70px' }}>GATCHA GATCHA</p>
         <img src="/shinchan.png" alt="짱구" />

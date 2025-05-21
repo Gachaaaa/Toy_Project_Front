@@ -8,7 +8,7 @@ function Header() {
   return (
     <div className='header'>
       <header className='navbar'>
-        <div style={{'color':'white'}}>
+        <div style={{'color':'black'}}>
           초짜도 같이 가챠</div>
         
         <nav>
@@ -18,7 +18,8 @@ function Header() {
             <li className='nav-item' style={{'color':'#58BFB6'}}>애니가챠</li>
             <li className='nav-item' style={{'color':'#794DBB'}}>음식가챠</li>
             <button className='head-but' 
-            style={{'width': '80px', 'height': '50px', 'fontSize': '15px'}}>
+            style={{'width': '80px', 'height': '50px', 'fontSize': '15px'}}
+            onClick={()=>navigate('/login')}>
               log in</button>
           </ul>
         </nav>
