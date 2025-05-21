@@ -1,8 +1,17 @@
 import React from 'react';
 import './Detail2.css';
+
 import shinchanImg from './shinchan_gacha.png';
+import { useParams, useNavigate } from 'react-router-dom';
 
 function DetailPageTemplate({ image, title, price, shipping, point, description, reviews, related }) {
+  const navigate = useNavigate();
+  const { productId } = useParams();
+
+  const handleAddReview = () => {
+    navigate(`/detail/${productId}/review`);
+  };
+
   return (
     <div className="detail-page2">
 
@@ -43,7 +52,10 @@ function DetailPageTemplate({ image, title, price, shipping, point, description,
 
       {/* 리뷰 */}
       <div className="review-section">
-        <h3>리뷰✨</h3>
+        <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+          <h3>리뷰✨</h3>
+          <button onClick={handleAddReview}>+</button>
+        </div>
         <div className="review-row">
           {reviews.map((r, idx) => (
             <div key={idx} className="review-item">

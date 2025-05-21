@@ -9,9 +9,11 @@ import Review from './components/Review.js';
 import Detail from './components/Detail/Detail.js';
 import Detail_Header from './components/Detail/Detail_Header.js';
 import Detail_Ground from './components/Detail/Detail_Ground.js';
+import Detail_Review from './components/Detail/Detail_Review.js';
 import Login from './components/Login.js';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import Detail2_1 from './components/Detail2/Detail2_1';
 import Detail2_2 from './components/Detail2/Detail2_2';
@@ -31,6 +33,8 @@ import Detail2_15 from './components/Detail2/Detail2_15';
 import Detail2_16 from './components/Detail2/Detail2_16';
 import Detail2_17 from './components/Detail2/Detail2_17';
 import Detail2_18 from './components/Detail2/Detail2_18';
+
+import DetailPageTemplate from './components/Detail2/DetailPageTemplate.js'
 
 function MainPage() {
   return (
@@ -56,6 +60,72 @@ function DetailPage() {
   );
 }
 
+
+function ProductPage() {
+  const { productId } = useParams();
+  const id = parseInt(productId);
+
+  let productNumber;
+  switch (id) {
+    case 1:
+      productNumber = <Detail2_1 />;
+    case 2:
+      productNumber = <Detail2_2 />;
+    case 3:
+      productNumber = <Detail2_3 />;
+    case 4:
+      productNumber = <Detail2_4 />;
+    case 5:
+      productNumber = <Detail2_5 />;
+    case 6:
+      productNumber = <Detail2_6 />;
+    case 7:
+      productNumber = <Detail2_7 />;
+    case 8:
+      productNumber =<Detail2_8 />;
+    case 9:
+      productNumber = <Detail2_9 />;
+    case 10:
+      productNumber = <Detail2_10 />;
+    case 11:
+      productNumber = <Detail2_11 />;
+    case 12:
+      productNumber = <Detail2_12 />;
+    case 13:
+      productNumber = <Detail2_13 />;
+    case 14:
+      productNumber = <Detail2_14 />;
+    case 15:
+      productNumber = <Detail2_15 />;
+    case 16:
+      productNumber = <Detail2_16 />;
+    case 17:
+      productNumber = <Detail2_17 />;
+    case 18:
+      productNumber = <Detail2_18 />;
+  };
+
+  return(
+    <div className="container">
+      <Detail_Header />
+      {productNumber}
+      <hr style={{ width: '90%' }} />
+      <Detail_Ground />
+    </div>
+  );
+}
+
+function ReviewPage() {
+  return(
+    <div className="container">
+      <Detail_Header />
+      <Detail_Review />
+      <hr style={{ width: '90%' }} />
+      <Detail_Ground />
+    </div>
+  )
+}
+
 function LoginPage() {
   return (
     <div className="container">
@@ -74,24 +144,9 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="/detail" element={<DetailPage />} />
 
-        <Route path="/detail/1" element={<div><Detail_Header /><Detail2_1 /><hr style={{ width: '90%' }} /><Detail_Ground /></div>} />
-        <Route path="/detail/2" element={<div><Detail_Header /><Detail2_2 /><hr style={{ width: '90%' }} /><Detail_Ground /></div>} />
-        <Route path="/detail/3" element={<div><Detail_Header /><Detail2_3 /><hr style={{ width: '90%' }} /><Detail_Ground /></div>} />
-        <Route path="/detail/4" element={<div><Detail_Header /><Detail2_4 /><hr style={{ width: '90%' }} /><Detail_Ground /></div>} />
-        <Route path="/detail/5" element={<div><Detail_Header /><Detail2_5 /><hr style={{ width: '90%' }} /><Detail_Ground /></div>} />
-        <Route path="/detail/6" element={<div><Detail_Header /><Detail2_6 /><hr style={{ width: '90%' }} /><Detail_Ground /></div>} />
-        <Route path="/detail/7" element={<div><Detail_Header /><Detail2_7 /><hr style={{ width: '90%' }} /><Detail_Ground /></div>} />
-        <Route path="/detail/8" element={<div><Detail_Header /><Detail2_8 /><hr style={{ width: '90%' }} /><Detail_Ground /></div>} />
-        <Route path="/detail/9" element={<div><Detail_Header /><Detail2_9 /><hr style={{ width: '90%' }} /><Detail_Ground /></div>} />
-        <Route path="/detail/10" element={<div><Detail_Header /><Detail2_10 /><hr style={{ width: '90%' }} /><Detail_Ground /></div>} />
-        <Route path="/detail/11" element={<div><Detail_Header /><Detail2_11 /><hr style={{ width: '90%' }} /><Detail_Ground /></div>} />
-        <Route path="/detail/12" element={<div><Detail_Header /><Detail2_12 /><hr style={{ width: '90%' }} /><Detail_Ground /></div>} />
-        <Route path="/detail/13" element={<div><Detail_Header /><Detail2_13 /><hr style={{ width: '90%' }} /><Detail_Ground /></div>} />
-        <Route path="/detail/14" element={<div><Detail_Header /><Detail2_14 /><hr style={{ width: '90%' }} /><Detail_Ground /></div>} />
-        <Route path="/detail/15" element={<div><Detail_Header /><Detail2_15 /><hr style={{ width: '90%' }} /><Detail_Ground /></div>} />
-        <Route path="/detail/16" element={<div><Detail_Header /><Detail2_16 /><hr style={{ width: '90%' }} /><Detail_Ground /></div>} />
-        <Route path="/detail/17" element={<div><Detail_Header /><Detail2_17 /><hr style={{ width: '90%' }} /><Detail_Ground /></div>} />
-        <Route path="/detail/18" element={<div><Detail_Header /><Detail2_18 /><hr style={{ width: '90%' }} /><Detail_Ground /></div>} />
+        <Route path='/detail/:productId' element={<ProductPage />} />
+
+        <Route path="/detail/:productId/review" element={<ReviewPage />} />
 
         <Route path="/Login" element={<LoginPage />} />
       </Routes>
