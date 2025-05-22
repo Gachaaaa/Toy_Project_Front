@@ -1,5 +1,5 @@
 import React from 'react';
-import './Detail.css';
+import './detail.css';
 import gatchImg from './Detail_img/GATCHA.png';
 import { useNavigate } from 'react-router-dom';
 

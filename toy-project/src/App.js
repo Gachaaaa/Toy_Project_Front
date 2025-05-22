@@ -34,7 +34,6 @@ import Detail2_16 from './components/Detail2/Detail2_16';
 import Detail2_17 from './components/Detail2/Detail2_17';
 import Detail2_18 from './components/Detail2/Detail2_18';
 
-import DetailPageTemplate from './components/Detail2/DetailPageTemplate.js'
 
 function MainPage() {
   return (

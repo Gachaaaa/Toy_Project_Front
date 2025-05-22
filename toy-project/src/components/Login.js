@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
 export default function LoginPage() {
   const [ID, setID] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -16,6 +19,8 @@ export default function LoginPage() {
 
     console.log('로그인 시도:', { ID, password });
     setError('');
+    navigate('/');
+  
   };
 
   return (

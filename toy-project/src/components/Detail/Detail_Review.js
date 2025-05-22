@@ -1,4 +1,4 @@
-import './Detail.css';
+import './detail.css';
 import '../Login.css';
 
 import { useParams, useNavigate } from 'react-router-dom';

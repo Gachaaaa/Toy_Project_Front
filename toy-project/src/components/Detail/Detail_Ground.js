@@ -1,4 +1,4 @@
-import './Detail.css';
+import './detail.css';
 
 function Ground() {
   return (
